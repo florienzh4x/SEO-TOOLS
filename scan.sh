@@ -11,7 +11,7 @@ clear
 # GooIndex(){
 # 	web=$1
 # 	# DEFAULT FOR INDONESIAN LANGUAGE
-# 	# IF YOU USE DIFFERENT LANGUAGE CHANGE GOOGLE DOMAIN AND VALUE "Sekitar" AND "hasil" TO YOUR LANGUAGE
+# 	# IF YOU USE DIFFERENT LANGUAGE, CHANGE GOOGLE DOMAIN AND VALUE "Sekitar" AND "hasil" TO YOUR LANGUAGE
 # 	GetIndex=$(lynx "https://www.google.co.id/search?q=site:${web}&start=0" -dump -accept_all_cookies | grep -Po "(?<=Sekitar )[^ hasil]*")
 # 	for hasil in $GetIndex; do
 # 		printf "[!] Google Index : About $hasil Result\n"
@@ -20,7 +20,7 @@ clear
 GooIndex(){
 	web=$1
 	# DEFAULT FOR INDONESIAN LANGUAGE
-	# IF YOU USE DIFFERENT LANGUAGE CHANGE GOOGLE DOMAIN AND VALUE "Sekitar" AND "hasil" TO YOUR LANGUAGE
+	# IF YOU USE DIFFERENT LANGUAGE, CHANGE GOOGLE DOMAIN AND VALUE "Sekitar" AND "hasil" TO YOUR LANGUAGE
 	GetIndex=$(lynx "https://www.google.co.id/search?q=site:${web}&start=0" -dump -accept_all_cookies)
 	if [[ ! $GetIndex =~ "tidak cocok dengan dokumen" ]]; then
 			GetValueGoo=$(echo $GetIndex | grep -Po "(?<=Sekitar )[^ hasil]*")
